@@ -1,0 +1,41 @@
+<!--
+    Name: Genevieve Saab
+    Pawprint: gms4kc
+    Date: 9/27/19
+    Challenge Code Editor
+-->
+
+<!-- html5 doctype -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title id="title">Challenge 6 Code Editor</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="Gms4kcCodeEditor.css">
+    </head>
+    <body>
+        <h1 id="header" ondblclick="prompt1()">Genevieve's Code Editor</h1>
+        <div id="mainWrapper" class="clear">
+        <form action="#" method="POST">
+            <div id="leftWrapper">
+            <div>
+                <textarea  id="CSS" name="CSS" ondblclick="cssDefault()">CSS...</textarea>
+            </div>
+            <div>
+                <textarea  id="HTML" name="HTML" ondblclick="htmlDefault()">HTML...</textarea>
+            </div>
+            </div>
+            </form>
+            <div id="rightWrapper">
+                
+            </div>
+        </div>
+        <div id="buttons">
+            <button type="button" onclick="getHTML()">HTML</button>
+            <button type="button" onclick="getCSS()" id="cssButton">CSS</button>
+            <button type="button" onclick="erase()">Erase</button>
+        </div>
+        <h4><a href="Gms4kcProjects.html">Genevieve Saab</a></h4>
+        <script src="Gms4kcCodeEditor.js"></script>
+    </body>
+</html>

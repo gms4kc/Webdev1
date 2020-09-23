@@ -1,0 +1,81 @@
+ #navbar {
+    background-color:lightpink;
+    color: deeppink;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    text-align: left;
+}
+
+a {
+    margin: 10px;
+    font-size: 35px;
+    font-family: serif;
+    color: deeppink;
+}
+
+#mainContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin: auto;
+}
+
+.cardContainer {
+    width: 450px;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardImage {
+    width: 100%;
+    border-bottom: 10px solid black; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(Big_Shoulders_Display/BigShouldersDisplay-Regular.ttf);
+    
+    /*This font was obtained from Google Fonts and designed by Patric King. Link: https://fonts.google.com/specimen/Big+Shoulders+Display*/
+}
+
+span {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: myFont, cursive;
+    
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+.link {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+body {
+    background-color: pink;
+    padding-top: 50px;
+}

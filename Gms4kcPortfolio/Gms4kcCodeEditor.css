@@ -1,0 +1,58 @@
+body {
+    background-color: pink;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+  margin: 0 auto; 
+  width: 760px;
+  text-align: center;*/
+}
+
+textarea {
+    border: 2px solid black;
+    box-shadow: 10px 10px 10px grey; 
+    height: 175px;
+    width: 400px;
+}
+
+#mainWrapper {
+ 
+}
+
+.clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#leftWrapper {
+    float: left;
+}
+
+#rightWrapper {
+    float: left;
+    background-color: white;
+    height: 366px;
+    width: 300px;
+    margin-left: 20px;
+    border: 2px solid black;
+    box-shadow: 10px 10px 10px grey;
+}
+
+#buttons {
+    text-align: center;
+    
+}
+
+#cssButton {
+    background-color: lightgrey;
+}
+
+h4 {
+    text-align: center;
+}
+

@@ -1,0 +1,93 @@
+<!-- html5 doctype -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pet Simulator</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="petPage.css">
+       
+        <!--    1. jQuery UI CSS-->
+        <link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    
+        <!--    2. jQuery Core Library-->
+        <script src="jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    
+        <!--    3. jQuery UI JavaScript -->
+        <script src="jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        
+    </head>
+    
+    <body>
+        <div id="nav"></div>
+        <p id="bunnyName">Bunny</p>
+        <div id="wrapperDiv">
+            <div id="leftDiv">
+                <img src="Pictures/carrot.png" alt="food" class="draggable">
+                <img src="Pictures/ball.png" alt="fun" class="draggable">
+                <img src="Pictures/heart.png" alt="love" class="draggable">
+                <img src="Pictures/icecream.png" alt="food" class="draggable">
+                <img src="Pictures/teddy.png" alt="fun" class="draggable">
+                <img src="Pictures/flowers.png" alt="love" class="draggable">
+                <img src="Pictures/strawberry.png" alt="food" class="draggable">
+                <img src="Pictures/train.png" alt="fun" class="draggable">
+                <img src="Pictures/heart2.png" alt="love" class="draggable">
+                <img src="Pictures/lollipop.png" alt="food" class="draggable">
+                <img src="Pictures/hat.png" alt="fun" class="draggable">
+            </div>
+            <div id="middleDiv" class="droppable">
+                <div id="petArea">
+                    <img src="Pictures/pinkBunny.png" alt="pinkBunny" id="pinkBunny">
+                </div>
+            </div>
+            <div id="rightDiv">
+                <p>Hunger</p>
+                <div id="hungerBar" class="healthBar">
+                    <div class="healthBlock" id="h1"></div>
+                    <div class="healthBlock" id="h2"></div>
+                    <div class="healthBlock" id="h3"></div>
+                    <div class="healthBlock" id="h4"></div>
+                    <div class="healthBlock" id="h5"></div>
+                    <div class="healthBlock" id="h6"></div>
+                    <div class="healthBlock" id="h7"></div>
+                </div>
+                <p>Fun</p>
+                <div id="funBar" class="healthBar">
+                    <div class="healthBlock" id="f1"></div>
+                    <div class="healthBlock" id="f2"></div>
+                    <div class="healthBlock" id="f3"></div>
+                    <div class="healthBlock" id="f4"></div>
+                    <div class="healthBlock" id="f5"></div>
+                    <div class="healthBlock" id="f6"></div>
+                    <div class="healthBlock" id="f7"></div>
+                </div>
+                <p>Love</p>
+                <div id="loveBar" class="healthBar">
+                    <div class="healthBlock" id="l1"></div>
+                    <div class="healthBlock" id="l2"></div>
+                    <div class="healthBlock" id="l3"></div>
+                    <div class="healthBlock" id="l4"></div>
+                    <div class="healthBlock" id="l5"></div>
+                    <div class="healthBlock" id="l6"></div>
+                    <div class="healthBlock" id="l7"></div>
+                </div>
+                
+                <br>
+                
+                <p>Instructions: Drag an item to the bunny to replenish its health bars! You can name your bunny by submitting a name in the text box below the bunny.</p>
+                
+                <br>
+                
+                <a href="video.php">Click here to see a cute video!</a>
+            </div>
+            
+        </div>
+        
+         <form method="get" id="myForm">
+            <input id="firstName" name="firstName" value="Type Name Here!">
+            <input type="hidden" name="function1" value="nameFunction">
+            <input type="button" id="submit1" value="Submit" onclick="getContent()"> 
+        </form>
+        
+        <script src="petPage.js"></script>
+    </body>
+</html>

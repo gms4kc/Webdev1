@@ -1,0 +1,150 @@
+<!-- html5 doctype -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CS/IT 2830 Dashboard</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="Gms4kcAJAX.css">
+        <script src="jquery-1.11.2.min.js"></script>
+        <script>
+            
+            /*Get info*/
+            function getContent() {
+                $("#infoData").html("Loading....");
+
+                $.get("http://ec2-18-219-205-255.us-east-2.compute.amazonaws.com/CS2830/classInfo.php?content=info", function(data) {
+                    console.dir(data);
+
+                    $("#infoData").html(data);
+                });
+            }
+            
+            getContent();
+            
+            /*Get next class*/
+            $("#nextClass").html("Loading....");
+            var xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onload = function() {
+                if (xmlHttp.status == 200) {
+                    var contentBox = document.getElementById("nextClass");
+
+                    var response = xmlHttp.responseText;
+
+                    console.dir(response);
+
+                    response = JSON.parse(response);
+
+                    console.dir(response);
+
+                    var d = new Date((response.nextClassTimestamp)*1000);
+                    console.dir(d);
+
+                    contentBox.innerHTML = "Next Class:\n" + d;
+                }
+            };
+            xmlHttp.open("GET", "http://ec2-18-219-205-255.us-east-2.compute.amazonaws.com/CS2830/classInfo.php?content=nextClassDate&format=json", true);
+            xmlHttp.send();
+            
+            /*Get current assignment*/
+            $("#currentAssignment").html("Loading....");
+            var xmlHttp1 = new XMLHttpRequest();
+		
+		    xmlHttp1.onload = function() {
+                if (xmlHttp1.status == 200) {
+
+                    var output = xmlHttp1.responseXML;
+
+                    var divObj = document.getElementById('currentAssignment');
+                    
+                    console.dir(divObj);
+                    
+                    var timeObj = output.getElementsByTagName('dueDateTimestamp');
+                    console.dir(timeObj[0]);
+                    
+                    var nameObj = output.getElementsByTagName('assignmentName');
+                    console.dir(nameObj[0]);
+                    
+                    var d = new Date(timeObj[0].innerHTML * 1000);
+                    console.dir(d);
+
+                    divObj.innerHTML = "Current Assignment: " + nameObj[0].innerHTML + " " + d;
+
+                }
+		     }
+		
+		xmlHttp1.open("GET", "http://ec2-18-219-205-255.us-east-2.compute.amazonaws.com/CS2830/classInfo.php?content=currentAssignment&format=xml", true);
+		xmlHttp1.send();
+            
+        /*Get Office Hours*/
+            function showOfficeHours(day) {
+                $("#previewPane").html("Loading....");
+                var weekday = day;
+                var xmlHttp2 = new XMLHttpRequest();
+                xmlHttp2.onload = function() {
+                    if (xmlHttp2.status == 200) {
+                        var officeHourInfoBox = document.getElementById("previewPane");
+
+                        var myResponse = xmlHttp2.responseXML;
+
+                        console.dir(myResponse);
+
+                        
+                        var nameVar = myResponse.getElementsByTagName("person");
+                        
+                        for(i = 0; i < nameVar.length; i++) {
+                            var nameVar = myResponse.getElementsByTagName("person");
+                            var timeVar = myResponse.getElementsByTagName("time");
+                            var locationVar = myResponse.getElementsByTagName("location");
+                        }
+                        
+                        console.dir(nameVar[0]);
+                        console.dir(timeVar[0]);
+                        console.dir(locationVar[0]);
+
+                        console.dir(myResponse);
+
+                        for(i = 0; i < nameVar.length; i++) {
+                            if(i==0) { 
+                             officeHourInfoBox.innerHTML = nameVar[0].innerHTML + " has office hours from " + timeVar[0].innerHTML + " at " + locationVar[0].innerHTML + "<br>";
+                            }
+                            else {
+                                officeHourInfoBox.innerHTML += nameVar[i].innerHTML + " has office hours from " + timeVar[i].innerHTML + " at " + locationVar[i].innerHTML + "<br>";
+                            }
+                        }
+                }
+            };
+                xmlHttp2.open("GET", "http://ec2-18-219-205-255.us-east-2.compute.amazonaws.com/CS2830/classInfo.php?content=officeHours&format=xml&day=" + weekday, true);
+                xmlHttp2.send();
+            }
+        
+        </script>
+    </head>
+    <body>
+        <div id="wrapperDiv" class="clear">
+            <div id="header">
+                <h1>CS/IT 2830 Dashboard</h1>
+                <p id="infoData"></p>
+            </div>
+            <div id="middleRow">
+                <div id="currentAssignment" class="middleBox">
+                    Current Assignment:
+                </div>
+                <div id="nextClass" class="middleBox">
+                    Next Class:
+                </div>
+            </div>
+            <div id="bottomRow">
+                <h2>Office hour info:</h2>
+                <div id="weekdays" class="clear">
+                    <button class="day" id="monday" onclick="showOfficeHours('monday')">Monday</button>
+                    <button class="day" id="tuesday" onclick="showOfficeHours('tuesday')">Tuesday</button>
+                    <button class="day" id="wednesday" onclick="showOfficeHours('wednesday')">Wednesday</button>
+                    <button class="day" id="thursday" onclick="showOfficeHours('thursday')">Thursday</button>
+                    <button class="day" id="friday" onclick="showOfficeHours('friday')">Friday</button>
+                    <div id="previewPane"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

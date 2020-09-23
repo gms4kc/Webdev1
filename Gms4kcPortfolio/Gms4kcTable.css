@@ -1,0 +1,161 @@
+body {
+    background-color: pink;
+    padding-top: 60px;
+}
+
+ #navbar {
+    background-color:lightpink;
+    color: deeppink;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    text-align: left;
+}
+
+a {
+    margin: 10px;
+    font-size: 35px;
+    font-family: serif;
+    color: deeppink;
+}
+
+#classesTable {
+    width: 100%;
+    border: 3px solid black;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+#UniversityofMissouri-Columbia {
+    border: 3px solid black;
+   background-color: goldenrod;
+   color: white;
+}
+
+#UniversityLogo {
+    background-color: grey;
+}
+
+#image {
+    max-width: 30%;
+} 
+
+.professor {
+    height: 200px;
+}
+
+
+#classesTaken {
+    border: 3px solid black;
+    background-color: slategray;
+    color: white;
+}
+
+#fallSemester {
+    border: 3px solid black;
+    border: 3px solid black;
+    background-color: gainsboro;
+}
+
+#labels {
+    border: 3px solid black;
+    background-color: lightgoldenrodyellow;
+    color: red;
+    text-align: center;
+}
+
+#classesTable tr:nth-child(8n+5) { 
+   background-color: white;
+}
+     
+#classesTable tr:nth-child(8n+9) { 
+    background-color: gainsboro;
+}
+
+td {
+    border: 3px solid black;
+}
+
+.greyCell {
+    background-color: slategray;
+}
+
+.redCell {
+   background-color: darkred;
+}
+
+#wrapper {
+    width: 80%;
+    box-shadow: 10px 10px 10px grey; 
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: auto;
+} 
+
+#imageLeft {
+   /* height: 300px;
+    width: 15%;
+    float: left;
+    border: 1px solid black;
+    margin: 10px;*/
+}
+
+#professorCard {
+    height: 300px;
+    width: 15%;
+    float: left;
+    border: 1px solid black;
+    margin: 10px;
+}
+           
+#infoMid {
+    width: 40%;
+    float: left;
+    font-family: sans-serif;
+    margin-top: 10px;
+    text-align: left;
+}
+
+hr {
+    width: 10%
+    float: left;
+}
+         
+#infoRight {
+
+}
+
+#infoTop {
+    width: 35%;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: right;
+    float: left
+}
+
+#infoBottom {
+    width: 35%;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: right;
+    float: left;
+}
+
+#down {
+    padding-top: 170px;
+}
+
+.clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+                

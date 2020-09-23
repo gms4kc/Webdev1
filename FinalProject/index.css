@@ -1,0 +1,24 @@
+body {
+    background-color: pink;
+    text-align: center;
+}
+
+h1 {
+    color: deeppink;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: deeppink;
+    font-size: 50px;
+    border: 1px solid deeppink;
+    background-color: aliceblue;
+}
